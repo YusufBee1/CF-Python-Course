@@ -26,3 +26,11 @@ I chose a **Dictionary** for the individual recipes. Dictionaries are ideal for 
 
 ### 2. The Outer Structure (`all_recipes`)
 I chose a **List** for the outer structure to hold the recipes. Lists are sequential and ordered, which is perfect for maintaining a collection of items. A list allows us to easily iterate through the recipes (as shown in the ingredients loop) and dynamically add or remove recipes using methods like `.append()`, making it a flexible choice for a growing dataset.
+
+# Exercise 1.3: Control Flow & Loops
+
+## Description
+This script is a dynamic recipe intake tool. It demonstrates the use of:
+* **While/For Loops:** To iterate through user input.
+* **Logical Operators (and/or):** To calculate recipe difficulty based on multiple conditions (cooking time + ingredient count).
+* **Data sanitization:** Using `.split()` to convert raw string input into usable lists.
