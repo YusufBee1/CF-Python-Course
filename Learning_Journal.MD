@@ -13,3 +13,12 @@ Coming from a JavaScript/React background, setting up Python felt a bit differen
 
 **Goals:**
 I want to master Python's data analysis libraries to complement my front-end skills.
+
+# Learning Journal - Exercise 1.2
+
+**Date:** December 2025
+
+**What I Learned:**
+* **Dictionaries vs. Lists:** Coming from JavaScript, I realized that Python's Dictionaries are very similar to JS Objects (key-value pairs), while Lists are essentially Arrays.
+* **Mutability:** Both structures are mutable, meaning I can add recipes to my list or change ingredients in a dictionary after they are created.
+* **Iteration:** Using a `for` loop in Python is cleaner and more readable than the traditional `for(i=0;...)` loops I'm used to in other languages.
