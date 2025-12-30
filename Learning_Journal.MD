@@ -29,3 +29,17 @@ This was the first step into actual logic programming. I learned how to bridge t
 
 **Key Takeaway:**
 The `.split(", ")` method is crucial for parsing comma-separated lists from users. I also got comfortable using complex `if/elif` structures to create logic gates for the difficulty ratings.
+
+# Learning Journal - Exercise 1.4
+**Date:** December 2025
+
+**Experience:**
+This exercise was a significant step up because I moved from working with temporary data (variables) to persistent data (files). Building a program that "remembers" recipes after it closes felt like building a real application.
+
+**What I Learned:**
+* **The Pickle Module:** I learned how to use `pickle` to serialize Python objects (like dictionaries and lists) into binary files so they can be stored and retrieved later.
+* **Binary Modes:** I understood the difference between writing text (`w`) and writing binary (`wb`), which is crucial for non-text data.
+* **Exception Handling:** I used `try`, `except`, `else`, and `finally` blocks to make the code robust. This prevents the program from crashing if a file is missing or user input is invalid.
+
+**Challenges:**
+It was tricky to manage the logic flow of opening a file, loading data, modifying it, and then saving it back without overwriting or losing existing data.
