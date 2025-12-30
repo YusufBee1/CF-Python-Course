@@ -43,3 +43,15 @@ This exercise was a significant step up because I moved from working with tempor
 
 **Challenges:**
 It was tricky to manage the logic flow of opening a file, loading data, modifying it, and then saving it back without overwriting or losing existing data.
+
+# Learning Journal - Exercise 1.5
+**Date:** December 2025
+
+**Experience:**
+This exercise introduced Object-Oriented Programming (OOP). Instead of managing separate lists and dictionaries, I created a `Recipe` class that holds both data (attributes) and behavior (methods).
+
+**What I Learned:**
+* **Classes vs. Objects:** The Class `Recipe` is the blueprint, while `tea` and `coffee` are specific instances (Objects) built from that blueprint.
+* **The `self` keyword:** I learned that `self` allows the code to distinguish between *this* specific recipe's name and *that* recipe's name.
+* **Magic Methods:** I used `__init__` to set up the object and `__str__` to define how the object looks when printed.
+* **Variable Arguments:** Using `*args` in `add_ingredients` was cool—it let me pass as many ingredients as I wanted without creating a list first.
