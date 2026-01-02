@@ -109,3 +109,18 @@ In this exercise, I officially started the Django Recipe Application. I moved fr
 
 **Challenges:**
 The renaming step (changing `recipe_project` to `src`) was a specific structural requirement that required careful navigation in the file system to ensure I didn't break the path to `manage.py`.
+
+# Learning Journal - Exercise 2.3
+**Date:** January 2026
+
+**Experience:**
+This exercise was the "construction phase" of the Recipe App. I moved from setup to actually building the core features. I designed the database schema, created the `recipes` app, defined the data model in Python code, and successfully migrated it to the database. I also navigated the complexity of managing two separate GitHub repositories—one for the course deliverables and a new dedicated one for the app code.
+
+**What I Learned:**
+* **Models as Blueprints:** I learned that a Django Model (`class Recipe(models.Model)`) is the single source of truth for your data. You define it in Python, and Django handles the SQL behind the scenes.
+* **The Migration Workflow:** I practiced the two-step process: `makemigrations` (prepare the changes) and `migrate` (apply them to the DB).
+* **Django Admin:** I saw how registering a model in `admin.py` instantly creates a professional CRUD (Create, Read, Update, Delete) interface without writing any HTML.
+* **Nested Repositories:** I learned how to initialize a fresh git repository inside a subfolder (`src`) to track the application code separately from my course coursework.
+
+**Challenges:**
+The most complex part was managing the folder structures and ensuring I was in the correct directory for specific commands. Understanding where `settings.py` lives versus where the `apps` live took some getting used to.
