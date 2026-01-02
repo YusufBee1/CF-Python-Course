@@ -83,3 +83,29 @@ This final task brought everything together. I built a complete command-line app
 
 **Challenges:**
 Transitioning from raw SQL (in 1.6) to SQLAlchemy (in 1.7) required a shift in thinking. Instead of writing `INSERT INTO`, I had to think about creating an Object and `session.add()`-ing it. Managing the session flow (commits and closes) was also critical to prevent database locks.
+
+# Learning Journal - Exercise 2.1
+**Date:** January 2026
+
+**Experience:**
+This was my introduction to Web Development with Python. I spent time researching the Django framework to understand why major companies like Instagram and Spotify use it. I also set up my first "practice" environment to get comfortable with the installation process before starting the main project.
+
+**What I Learned:**
+* **Django's Philosophy:** I learned that Django is "batteries-included," meaning it comes with built-in tools for authentication, database management, and security. This makes it ideal for complex, user-heavy applications but overkill for simple static sites.
+* **Virtual Environments:** I practiced creating and activating a specific virtual environment (`achievement2-practice`) to keep my Django installation isolated from my system Python.
+* **Installation Checks:** I learned how to verify my installation using `python -m django --version` to ensure the framework is ready to use.
+
+# Learning Journal - Exercise 2.2
+**Date:** January 2026
+
+**Experience:**
+In this exercise, I officially started the Django Recipe Application. I moved from simple Python scripts to a full web framework structure. I set up the project foundation, configured the virtual environment, and accessed the Django Admin interface for the first time.
+
+**What I Learned:**
+* **Project Structure:** I learned how `django-admin startproject` generates the initial file structure (like `manage.py`, `settings.py`, and `urls.py`) and why the containing folder needs to be distinct from the project package.
+* **Virtual Environments:** I reinforced the importance of creating a fresh virtual environment (`a2-ve-recipeapp`) for each new major project to manage dependencies cleanly.
+* **The "Migrate" Command:** I learned that `python manage.py migrate` is necessary to initialize the database (SQLite by default) before the app can actually run.
+* **Superuser:** I discovered how to create an admin account (`createsuperuser`) to access the built-in Django back-end, which provides a powerful GUI for managing users and data right out of the box.
+
+**Challenges:**
+The renaming step (changing `recipe_project` to `src`) was a specific structural requirement that required careful navigation in the file system to ensure I didn't break the path to `manage.py`.
