@@ -55,3 +55,17 @@ This exercise introduced Object-Oriented Programming (OOP). Instead of managing 
 * **The `self` keyword:** I learned that `self` allows the code to distinguish between *this* specific recipe's name and *that* recipe's name.
 * **Magic Methods:** I used `__init__` to set up the object and `__str__` to define how the object looks when printed.
 * **Variable Arguments:** Using `*args` in `add_ingredients` was cool—it let me pass as many ingredients as I wanted without creating a list first.
+
+# Learning Journal - Exercise 1.6
+**Date:** January 2026
+
+**Experience:**
+This was the most complex task yet. I successfully connected a Python script to a MySQL database using the `mysql-connector-python` library.
+
+**What I Learned:**
+* **Database Connections:** I learned that Python needs a specific "driver" (connector) to talk to a database server.
+* **SQL in Python:** I practiced writing SQL queries (`INSERT`, `SELECT`, `UPDATE`, `DELETE`) inside Python strings and executing them with a cursor.
+* **Environment Setup:** The biggest challenge was realizing I needed the actual MySQL Server software installed and running on my machine, not just the Python library. I had to configure a specific user and password to match my script.
+
+**Challenges:**
+Setting up the local MySQL server and ensuring the user credentials (`cfpython`) matched my code exactly was a major troubleshooting step.
