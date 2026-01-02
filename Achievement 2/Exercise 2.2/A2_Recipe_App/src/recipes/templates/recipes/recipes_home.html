@@ -15,7 +15,12 @@
     <div class="welcome-box">
         <h1>Welcome to Recipe App 🍳</h1>
         <p>Discover simple, delicious recipes calculated for your skill level.</p>
-        <a href="{% url 'recipes:login' %}" class="btn">Login to View Recipes</a>
+        
+        <div style="display: flex; gap: 10px; justify-content: center;">
+            <a href="{% url 'recipes:login' %}" class="btn">Login & View</a>
+            <a href="{% url 'recipes:add_recipe' %}" class="btn" style="background-color: #ff9800;">+ Add Recipe</a>
+            <a href="{% url 'recipes:about' %}" class="btn" style="background-color: #2196f3;">About Me</a>
+        </div>
     </div>
 </body>
 </html>

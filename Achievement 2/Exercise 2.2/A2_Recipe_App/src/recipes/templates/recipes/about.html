@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; text-align: center; background-color: #e3f2fd; }
+        .card { background: white; padding: 30px; margin: 0 auto; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #1976d2; }
+        .links a { display: block; margin: 10px 0; color: #1976d2; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>About the Developer 👨‍💻</h1>
+        <p>Hi! I'm an aspiring Python Developer and this is my first Django application.</p>
+        <p>This app allows you to browse, search, and visualize recipe data.</p>
+        <div class="links">
+            <a href="https://github.com/YusufBee1">My GitHub Profile</a>
+            <a href="mailto:your.email@example.com">Contact Me</a>
+        </div>
+        <br>
+        <a href="{% url 'recipes:home' %}">← Back to Home</a>
+    </div>
+</body>
+</html>

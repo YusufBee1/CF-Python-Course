@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Recipe</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; background-color: #fff3e0; display: flex; justify-content: center;}
+        form { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 400px; }
+        input, textarea { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background-color: #ff9800; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 5px;}
+        button:hover { background-color: #f57c00; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>🍳 Add a New Recipe</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Recipe</button>
+        <br><br>
+        <a href="{% url 'recipes:list' %}" style="text-align:center; display:block; color: #555;">Cancel</a>
+    </form>
+</body>
+</html>

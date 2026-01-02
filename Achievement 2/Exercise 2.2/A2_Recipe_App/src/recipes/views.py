@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 from .models import Recipe
 from .forms import RecipesSearchForm
 import pandas as pd
@@ -85,7 +87,6 @@ def recipes_list(request):
         if qs.exists():
             recipes_df = pd.DataFrame(qs.values())
             
-            # Make the ID clickable (we'll fix the link in template, but prep data here)
             # Generate Chart
             if chart_type:
                 if chart_type == '#1':
@@ -115,3 +116,20 @@ def recipes_detail(request, pk):
         'recipe': recipe,
         'ingredients_list': ingredients_list
     })
+
+# --- NEW FEATURES ---
+
+def about(request):
+    return render(request, 'recipes/about.html')
+
+class RecipeCreateView(CreateView):
+    model = Recipe
+    fields = ['name', 'ingredients', 'cooking_time', 'description']
+    template_name = 'recipes/add_recipe.html'
+    success_url = reverse_lazy('recipes:list')
+
+    def form_valid(self, form):
+        # Determine difficulty automatically before saving
+        recipe = form.save(commit=False)
+        recipe.calculate_difficulty()
+        return super().form_valid(form)
