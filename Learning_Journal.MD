@@ -124,3 +124,17 @@ This exercise was the "construction phase" of the Recipe App. I moved from setup
 
 **Challenges:**
 The most complex part was managing the folder structures and ensuring I was in the correct directory for specific commands. Understanding where `settings.py` lives versus where the `apps` live took some getting used to.
+
+# Learning Journal - Exercise 2.4
+**Date:** January 2026
+
+**Experience:**
+This exercise was my first foray into the "Frontend" of Django. I moved beyond the Admin panel and created my first public-facing view. I designed a simple HTML Welcome page and learned how to "wire" it up using Django's URL routing system.
+
+**What I Learned:**
+* **MVT Architecture:** I learned how Model-View-Template works in practice. The View (`views.py`) fetches the data (or in this case, simply loads the page), and the Template (`.html`) displays it.
+* **Template Namespacing:** I learned why we create a folder structure like `templates/recipes/home.html`—it prevents naming conflicts if multiple apps have a file named `home.html`.
+* **URL Chaining:** I understood how the main `recipe_project/urls.py` delegates traffic to the specific `recipes/urls.py` using the `include()` function.
+
+**Challenges:**
+The folder structure for templates is a bit nested (`recipes/templates/recipes`), which feels redundant at first but makes sense for organizing larger projects.
