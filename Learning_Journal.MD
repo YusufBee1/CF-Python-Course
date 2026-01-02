@@ -138,3 +138,17 @@ This exercise was my first foray into the "Frontend" of Django. I moved beyond t
 
 **Challenges:**
 The folder structure for templates is a bit nested (`recipes/templates/recipes`), which feels redundant at first but makes sense for organizing larger projects.
+
+# Learning Journal - Exercise 2.6
+**Date:** January 2026
+
+**Experience:**
+In this exercise, I implemented the security layer of the application. I built a Login and Logout system using Django's built-in authentication tools. I learned how to protect specific views so that only logged-in users can access the recipe content, while keeping the "Home" page public.
+
+**What I Learned:**
+* **The `@login_required` Decorator:** I learned how adding this single line above a function protects the entire view.
+* **Django's Auth System:** I used `AuthenticationForm` to handle the UI and `login()`/`logout()` functions to manage the user's session.
+* **The `?next=` Parameter:** I saw how Django remembers where the user *wanted* to go (e.g., `/list/`), sends them to login, and then redirects them back to their destination automatically.
+
+**Challenges:**
+I encountered a `Page not found (404)` error where Django was trying to redirect unauthorized users to `/accounts/login/` by default. I learned that I had to explicitly define `LOGIN_URL = '/login/'` in `settings.py` to tell Django to use my custom login route instead.
