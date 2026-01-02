@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Recipes</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; background-color: #f9f9f9; text-align: center;}
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: #333; font-size: 1.2rem; background: white; padding: 10px 20px; border-radius: 5px; display: inline-block; width: 200px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.2s; }
+        a:hover { transform: scale(1.05); color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <h1>Our Recipes</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipes:detail' recipe.id %}">{{ recipe.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'recipes:home' %}" style="background:none; box-shadow:none; color: #666;">← Back to Home</a>
+</body>
+</html>

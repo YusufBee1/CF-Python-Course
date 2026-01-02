@@ -1,14 +1,15 @@
 from django.test import TestCase
+from django.urls import reverse
 from .models import Recipe
 
-class RecipeModelTest(TestCase):
+class RecipeTests(TestCase):
     def setUp(self):
-        Recipe.objects.create(name="Tea", ingredients="Water, Tea Leaves", cooking_time=5, difficulty="Easy", description="Hot tea")
+        self.recipe = Recipe.objects.create(name="Tea", ingredients="Water, Tea", cooking_time=5, description="Hot")
 
-    def test_recipe_name(self):
-        recipe = Recipe.objects.get(id=1)
-        self.assertEqual(recipe.name, 'Tea')
+    def test_list_view(self):
+        response = self.client.get(reverse('recipes:list'))
+        self.assertEqual(response.status_code, 200)
 
-    def test_cooking_time(self):
-        recipe = Recipe.objects.get(id=1)
-        self.assertEqual(recipe.cooking_time, 5)
+    def test_detail_view(self):
+        response = self.client.get(reverse('recipes:detail', args=[self.recipe.id]))
+        self.assertEqual(response.status_code, 200)
