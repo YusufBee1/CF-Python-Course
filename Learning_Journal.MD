@@ -69,3 +69,17 @@ This was the most complex task yet. I successfully connected a Python script to 
 
 **Challenges:**
 Setting up the local MySQL server and ensuring the user credentials (`cfpython`) matched my code exactly was a major troubleshooting step.
+
+# Learning Journal - Exercise 1.7
+**Date:** January 2026
+
+**Experience:**
+This final task brought everything together. I built a complete command-line application that uses Object-Relational Mapping (ORM) with SQLAlchemy. It felt much more professional than writing raw SQL strings.
+
+**What I Learned:**
+* **SQLAlchemy ORM:** I learned how to define a database schema using Python Classes (`DeclarativeBase`). This makes the code cleaner because I'm working with Objects (like `Recipe`) rather than raw database tuples.
+* **Logic & Validation:** I implemented robust input handling—checking for alphanumeric names, valid integers for cooking times, and ensuring users can't crash the app with bad inputs.
+* **Complex Searching:** The `search_by_ingredients` function was challenging. I had to retrieve strings, split them into lists, display them uniquely, and then build a dynamic SQL query using the `.like()` operator.
+
+**Challenges:**
+Transitioning from raw SQL (in 1.6) to SQLAlchemy (in 1.7) required a shift in thinking. Instead of writing `INSERT INTO`, I had to think about creating an Object and `session.add()`-ing it. Managing the session flow (commits and closes) was also critical to prevent database locks.
