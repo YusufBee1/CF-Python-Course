@@ -34,3 +34,52 @@ This script is a dynamic recipe intake tool. It demonstrates the use of:
 * **While/For Loops:** To iterate through user input.
 * **Logical Operators (and/or):** To calculate recipe difficulty based on multiple conditions (cooking time + ingredient count).
 * **Data sanitization:** Using `.split()` to convert raw string input into usable lists.
+
+# Recipe App 🍳
+
+A web-based recipe application built with Django (Python) that allows users to view, search, and manage recipes. The application includes authentication, data visualization using Pandas/Matplotlib, and a responsive design.
+
+## 🚀 Live Demo
+**View the live application here:** [https://yusuf-recipe-app-e9b7920225a4.herokuapp.com/](https://yusuf-recipe-app-e9b7920225a4.herokuapp.com/)
+
+## 🛠 Technologies Used
+* **Backend:** Django, Python
+* **Database:** PostgreSQL (Production), SQLite (Development)
+* **Frontend:** HTML5, CSS3, JavaScript
+* **Data Analysis:** Pandas, Matplotlib (for generating recipe difficulty charts)
+* **Hosting:** Heroku (using Gunicorn & Whitenoise)
+
+## ✨ Features
+* **User Authentication:** Secure login/logout for users.
+* **Recipe Management:** Users can add new recipes.
+* **Search Functionality:** Search recipes by name or ingredients.
+* **Data Visualization:** Dynamic charts showing cooking time trends and difficulty distribution.
+* **Responsive Design:** Optimized for mobile and desktop viewing.
+
+## 🔧 How to Run Locally
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YusufBee1/recipe-app.git](https://github.com/YusufBee1/recipe-app.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd recipe-app
+    ```
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Run migrations:**
+    ```bash
+    python manage.py migrate
+    ```
+5.  **Start the server:**
+    ```bash
+    python manage.py runserver
+    ```
+6.  **Access the app:** Open `http://127.0.0.1:8000/` in your browser.
+
+## 🧪 Testing
+To run the automated tests for this application:
+```bash
+python manage.py test
