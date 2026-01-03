@@ -152,3 +152,37 @@ In this exercise, I implemented the security layer of the application. I built a
 
 **Challenges:**
 I encountered a `Page not found (404)` error where Django was trying to redirect unauthorized users to `/accounts/login/` by default. I learned that I had to explicitly define `LOGIN_URL = '/login/'` in `settings.py` to tell Django to use my custom login route instead.
+
+**Journal Entry 2.7: Automated Testing in Django**
+
+**1. Why is automated testing important in web development?**
+> Automated testing is crucial because it ensures that new changes or features do not break existing functionality (regression testing). It saves time in the long run by catching bugs early in the development cycle, rather than waiting for a user to report them. In this project, writing tests for my models and views gave me confidence that my difficulty calculation logic and search forms were working correctly without needing to manually test every single page reload.
+
+**2. Explain the difference between `TestCase` and `TransactionTestCase` in Django.**
+> `TestCase` is the most common class used for testing in Django. It wraps each test in a database transaction and rolls it back at the end, which is fast and keeps the database clean. `TransactionTestCase` is used when we need to test code that handles its own transaction management (like if my code explicitly uses `commit` or `rollback`). For this recipe app, `TestCase` was sufficient because I wasn't doing complex manual transaction handling.
+
+**3. What does the `setUp` method do in a Django test class?**
+> The `setUp` method is a helper that runs before *every single test method* in the class. It is used to create the initial state required for testing, such as creating a dummy user or a test recipe in the database. This prevents code repetition (DRY principle), so I didn't have to re-create a "test user" inside every individual test function.
+
+**4. How did you test the "Difficulty Calculation" logic in your models?**
+> I created a unit test that initialized a Recipe object with specific `cooking_time` and `ingredients`. I then called the `.calculate_difficulty()` method and used `self.assertEqual()` to verify that the output matched the expected difficulty (e.g., "Easy", "Medium", "Hard"). This ensured that the logic remains accurate even if I change other parts of the model later.
+
+---
+
+**Journal Entry 2.8: Deployment & Final Touches**
+
+**1. What was the most challenging part of deploying your application, and how did you overcome it?**
+> The most challenging part was configuring the database for the production environment. During development, I used SQLite, which is a file-based database. However, I learned that Heroku uses an "ephemeral filesystem," meaning any files created (like the SQLite db) are deleted every time the dyno restarts. This caused my user data to disappear immediately after creation.
+>
+> To overcome this, I had to provision a PostgreSQL database on Heroku using the CLI (`heroku addons:create`). I also had to update my `settings.py` to conditionally select the database: using `dj_database_url` to connect to Postgres when live, but falling back to SQLite when working locally.
+
+**2. Why is it important to separate sensitive information (like SECRET_KEY) from your code?**
+> Hardcoding sensitive keys in `settings.py` is a major security risk because once pushed to GitHub, they are visible to the public. Hackers can use the `SECRET_KEY` to sign session cookies, potentially allowing them to hijack user sessions or compromise the server. In this task, I learned to use environment variables so that the key is stored securely on the server (Heroku Config Vars) and not in the source code.
+
+**3. Explain the role of Whitenoise in your deployment.**
+> Django does not support serving static files (CSS, Images, JS) in production by default; it is designed to let a dedicated web server handle that. Since I am using Heroku, I needed a middleware to handle these files efficiently. `Whitenoise` allows the Python web application to serve its own static files directly, making the app self-contained and much easier to deploy without setting up a separate server like Nginx or AWS S3.
+
+**4. What steps did you take to ensure the application’s quality before deployment?**
+> Before deploying, I ensured that `DEBUG` was set to `False` (or handled via environment variables) to prevent leaking error traces to users. I also ran `python manage.py test` to ensure all my views and models were functioning correctly. Finally, I performed manual User Acceptance Testing (UAT) on the live Heroku link, creating a superuser and verifying that the data persisted across sessions.
+
+---
